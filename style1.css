@@ -1,0 +1,189 @@
+
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+
+
+
+/* Dropdown Columns */
+.dropdown-column {
+    flex: 1;
+}
+
+.dropdown-column h4 {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.dropdown-column a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 3px 0;
+}
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* ⬅ Centers the items horizontally */
+    align-items: center;     /* ⬅ Centers them vertically */
+    gap: 20px;               /* Space between menu items */
+    margin: 0;
+    padding: 0;
+}
+/*toggle*/
+.dropdown-content {
+    position: absolute;
+    background-color: #c4e9eb;
+    min-width: 600px;
+    padding: 20px;
+    top: 40px;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    gap: 40px;
+    display: none; /* hidden by default */
+}
+
+/* When active, show menu */
+.dropdown.active .dropdown-content {
+    display: flex;
+}
+
+/* =========================
+   Mobile First Breakpoints
+   ========================= */
+
+/* For tablets and below (max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* Navbar menu items closer together */
+    .navbar-menu {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    /* Dropdown width smaller */
+    .dropdown-content {
+        min-width: 90%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .dropdown-column {
+        flex: 1 1 45%;
+    }
+
+    /* Product grids adjust */
+    .pet-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-cards {
+        gap: 10px;
+    }
+
+    .health-tips {
+        gap: 10px;
+    }
+}
+
+/* For mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Stack navbar vertically */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+    }
+
+    /* Dropdown fills full width */
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .dropdown-column {
+        flex: 1 1 100%;
+    }
+
+    /* Product grids single column */
+    .pet-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reviews: stack vertically */
+    .reviews-cards {
+        flex-direction: column;
+    }
+
+    /* Health tips: stack vertically */
+    .health-tips {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Community cards stack */
+    .community-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .community-card {
+        width: 90%;
+    }
+}
+
+/* For very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Smaller font sizes */
+    body {
+        font-size: 14px;
+    }
+
+    .navbar-menu a {
+        padding: 8px;
+    }
+
+    .toggle-container {
+        width: 80px;
+        height: 25px;
+    }
+
+    .toggle-pill {
+        width: 40px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    /* Review cards smaller */
+    .review-card {
+        width: 100%;
+    }
+
+    /* Tip cards smaller */
+    .tip-card {
+        width: 100%;
+        height: 120px;
+    }
+}

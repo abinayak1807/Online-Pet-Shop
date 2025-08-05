@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+<style>
+   .dog-section {
+    background-color: #d0edf2; /* light blue */
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Category Buttons */
+.dog-categories {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.dog-categories button {
+    border: 2px solid #000;
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 700 bold;
+}
+
+.dog-categories button img {
+    width: 25px;
+    height: 25px;
+}
+
+.dog-categories button.active {
+    background-color: #fff;
+    border: 2px solid #000;
+    font-weight: bold;
+}
+
+/* Product Grid */
+.dog-products {
+    display: flex;
+    justify-content:space-evenly;
+    padding: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Product Card */
+.dog-card {
+    background: #fff0f0;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.dog-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border: 1px solid #000;
+    border-radius: 6px;
+}
+
+.rating {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.cart-btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-btn:hover {
+    background: #e60000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dog-products {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.offer-banner {
+    background-color: #d0edf2; /* light blue section background */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.offer-content {
+    background: linear-gradient(to top, #ebd8d8, #ff6666); /* pink gradient */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.offer-dog {
+    width: 120px;
+    height: auto;
+}
+
+.offer-content p {
+    font-size: 22px;
+    font-weight: bold;
+    color:black;
+    text-align: right;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .offer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .offer-content p {
+        text-align: center;
+    }
+}
+
+
+</style>
+</head>
+<body>
+    <!-- Top Bar -->
+<div class="top-bar">
+    <div class="logo">
+      <img src="New folder/2.gif" alt="">  <img src="New folder/text (1).gif" alt="Buffy Pets Logo">
+        </div>
+     <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search">
+    </div>
+    <div class="icons">
+        <img src="New folder/location (1).png" alt="Location">
+        <img src="New folder/user.png" alt="Account">
+        <img src="New folder/shopping-cart.png" alt="Cart">
+    </div>
+</div>
+
+<!-- Navbar -->
+<ul class="navbar-menu">
+    <li><a href="index.html">Home</a></li>
+
+    <!-- Dogs -->
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Dogs ▼</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h4>Food</h4>
+                <a href="#">Dry Food</a>
+                <a href="#">Wet Food</a>
+                <a href="#">Prescribed Food</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Treats</h4>
+                <a href="#">Biscuit</a>
+                <a href="#">Dental Treats</a>
+                <a href="#">Calcium chew</a>
+                <a href="#">Chicken Treat</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Clothing</h4>
+                <a href="#">Coat</a>
+                <a href="#">Jacket</a>
+                <a href="#">T shirt</a>
+                <a href="#">Shirt</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Groom</h4>
+                <a href="#">Shampoos</a>
+                <a href="#">Wipes</a>
+                <a href="#">Grooming Tool</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Cats -->
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Cats ▼</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h4>Food</h4>
+                <a href="#">Dry Food</a>
+                <a href="#">Wet Food</a>
+                <a href="#">Prescribed Food</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Treats</h4>
+                <a href="#">Biscuits</a>
+                <a href="#">Dental Treats</a>
+                <a href="#">Catnip</a>
+                <a href="#">Fish Treats</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Accessories</h4>
+                <a href="#">Collars</a>
+                <a href="#">Beds</a>
+                <a href="#">Scratching Posts</a>
+                <a href="#">Toys</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Groom</h4>
+                <a href="#">Shampoos</a>
+                <a href="#">Brushes</a>
+                <a href="#">Nail Clippers</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Small Pets -->
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Small Pets ▼</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h4>Food</h4>
+                <a href="#">Pellets</a>
+                <a href="#">Veggies</a>
+                <a href="#">Seeds</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Treats</h4>
+                <a href="#">Fruit Treats</a>
+                <a href="#">Chew Sticks</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Housing</h4>
+                <a href="#">Cages</a>
+                <a href="#">Bedding</a>
+                <a href="#">Hideouts</a>
+            </div>
+            
+        </div>
+    </li>
+
+    <!-- Birds -->
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Birds ▼</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h4>Food</h4>
+                <a href="#">Seeds</a>
+                <a href="#">Pellets</a>
+                <a href="#">Fruits</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Treats</h4>
+                <a href="#">Honey Sticks</a>
+                <a href="#">Nuts</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Housing</h4>
+                <a href="#">Cages</a>
+                <a href="#">Perches</a>
+                <a href="#">Nest Boxes</a>
+            </div>
+            
+        </div>
+    </li>
+
+    <!-- Grooming -->
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Grooming ▼</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h4>Bathing</h4>
+                <a href="#">Shampoos</a>
+                <a href="#">Conditioners</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Brushing</h4>
+                <a href="#">Combs</a>
+                <a href="#">Brushes</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Nail Care</h4>
+                <a href="#">Nail Clippers</a>
+                <a href="#">Grinders</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Ear & Eye</h4>
+                <a href="#">Ear Cleaners</a>
+                <a href="#">Eye Wipes</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Vets -->
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Vets ▼</a>
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h4>Services</h4>
+                <a href="#">Consultation</a>
+                <a href="#">Vaccination</a>
+                <a href="#">Surgery</a>
+            </div>
+            <div class="dropdown-column">
+                <h4>Specialists</h4>
+                <a href="#">Dentistry</a>
+                <a href="#">Orthopedics</a>
+            </div>
+            
+            <div class="dropdown-column">
+                <h4>Emergency</h4>
+                <a href="#">24/7 Support</a>
+                <a href="#">Ambulance</a>
+            </div>
+        </div>
+    </li>
+
+    <li><a href="#">Contact Us</a></li>
+</ul>
+<!-- Dog Section -->
+<section class="dog-section">
+    <!-- Category Buttons -->
+    <div class="dog-categories">
+        <button class="active"><img src="New folder/Dog/42.jpg" alt="" onclick="window.location.href='dog.html'"> All</button>
+        <button><img src="New folder/Dog/27.jpg" alt="" onclick="window.location.href='dog food.html'"> Dog Food</button>
+        <button><img src="New folder/Dog/51.jpg" alt="" onclick="window.location.href='dog dress.html'"> Clothings</button>
+        <button><img src="New folder/Vet/1.jpg" alt="" onclick="window.location.href='dog vet.html'"> Vet Product</button>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="dog-products">
+        <div class="dog-card">
+            <img src="New folder/Dog/5.jpg" alt="Pet Toy">
+            <div class="rating">⭐ 4.5</div>
+            <h4>Dog Cute</h4>
+            <p class="price">Rs. 650</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/6.jpg" alt="Dog Dress">
+            <div class="rating">⭐ 4.0</div>
+            <h4>Red Dress</h4>
+            <p class="price">Rs. 950</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/7.jpg" alt="Dog Lash">
+            <div class="rating">⭐ 4.5</div>
+            <h4>Dog Hoodie</h4>
+            <p class="price">Rs. 1900</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+    </div>
+ <div class="dog-products">
+        <div class="dog-card">
+            <img src="New folder/Dog/8.jpg" alt="Pet Toy">
+            <div class="rating">⭐ 4.5</div>
+            <h4>White & Red</h4>
+            <p class="price">Rs. 1650</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/9.jpg" alt="Dog Dress">
+            <div class="rating">⭐ 4.0</div>
+            <h4>Dog Patter Hoodie</h4>
+            <p class="price">Rs. 1500</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/10.jpg" alt="Dog Lash">
+            <div class="rating">⭐ 4.5</div>
+            <h4>Hooded White</h4>
+            <p class="price">Rs. 1000</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+    </div>
+
+<div class="dog-products">
+        <div class="dog-card">
+            <img src="New folder/Dog/56.jpg" alt="Pet Toy">
+            <div class="rating">⭐ 4.5</div>
+            <h4>Pet Purple</h4>
+            <p class="price">Rs. 1650</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/55.jpg" alt="Dog Dress">
+            <div class="rating">⭐ 4.0</div>
+            <h4>Green Dress</h4>
+            <p class="price">Rs. 950</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/54.jpg" alt="Dog Lash">
+            <div class="rating">⭐ 4.5</div>
+            <h4>Red Printed</h4>
+            <p class="price">Rs. 1600</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+    </div>
+    <div class="dog-products">
+        <div class="dog-card">
+            <img src="New folder/Dog/53.jpg" alt="Pet Toy">
+            <div class="rating">⭐ 4.5</div>
+            <h4>Pinky Pink</h4>
+            <p class="price">Rs. 2000</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/52.jpg" alt="Dog Dress">
+            <div class="rating">⭐ 4.0</div>
+            <h4>Cutie Orange</h4>
+            <p class="price">Rs. 1200</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+
+        <div class="dog-card">
+            <img src="New folder/Dog/51.jpg" alt="Dog Lash">
+            <div class="rating">⭐ 4.5</div>
+            <h4>Cheked</h4>
+            <p class="price">Rs. 1000</p>
+            <button class="cart-btn">Add To Cart</button>
+        </div>
+    </div>
+    </section>
+<!-- Footer Section -->
+<div class="footer-wrapper">
+    <div class="container footer-container">
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <p>Contact Us</p>
+            <p>FAQ s</p>
+            <p>Privacy Policy</p>
+            <p>Track your order</p>
+        </div>
+
+        <!-- Service -->
+        <div class="footer-column">
+            <h3>Service</h3>
+            <p>Pet Grooming</p>
+            <p>Vet Consultation</p>
+            <p>Contact Us</p>
+        </div>
+
+        <!-- Explore -->
+        <div class="footer-column" onclick="window.location.href='about.html'">
+            <h3>Explore</h3>
+            <p>About Us</p>
+            <p>Happy Pets</p>
+        </div>
+
+        <!-- Get in Touch -->
+        <div class="footer-column">
+            <h3>Get in Touch for Offers</h3>
+            <div class="subscribe-box">
+                <input type="email" placeholder="Enter your mail id">
+                <button>Submit</button>
+            </div>
+            <p class="reach">Reach us : <a href="mailto:support@buffy.com">support@buffy.com</a></p>
+            <p class="note">
+                Join our Zigly community and be the first to know about exciting updates, services, 
+                and expert advice on caring for your furry friends
+            </p>
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <img src="New folder/facebook.png" alt="Facebook">
+                <img src="New folder/youtube.png" alt="YouTube">
+                <img src="New folder/instagram.png" alt="Instagram">
+            </div>
+        </div>
+    </div>
+
+    <!-- Shipping & Return -->
+    <div class="shipping-return">
+        <div class="policy-box">
+            <img src="New folder/van.PNG" alt="Free Shipping">
+            <p><strong>Free Shipping</strong><br><span>on order all above 700</span></p>
+        </div>
+        <div class="policy-box">
+            <img src="New folder/van1.PNG" alt="Easy Return">
+            <p><strong>Easy Return Policy</strong></p>
+        </div>
+    </div>
+</div>
+<script>
+//toggle//
+
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault(); // stop link from going to #
+        
+        // Close any other open dropdowns
+        document.querySelectorAll('.dropdown').forEach(drop => {
+            if (drop !== this.parentElement) {
+                drop.classList.remove('active');
+            }
+        });
+        
+        // Toggle this dropdown
+        this.parentElement.classList.toggle('active');
+    });
+});
+
+// close dropdown if you click outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(drop => {
+            drop.classList.remove('active');
+        });
+    }
+});
+</script>
+
+</body>
+</html>
